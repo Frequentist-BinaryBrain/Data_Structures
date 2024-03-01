@@ -1,0 +1,167 @@
+     Recursion Definition:
+        Solving a problem by having a function call itself.
+        In computer science, it's a method where the solution depends on the solution to a similar instance of the same problem.
+
+    Real-life Example - Russian Dolls:
+        Russian dolls are a sequence of similar dolls inside each other.
+        Each doll can be opened to reveal a smaller one, and this process continues until the smallest doll is reached.
+
+    Properties of Recursion - Russian Doll Analogy:
+
+        Performing the Same Operation:
+            Opening Russian dolls is the repeated operation.
+            The process is performed multiple times with different-sized dolls(i.e with different inputs).
+
+        Trying Smaller Inputs:(making it easier to find the solution at the end)
+            In each step, smaller dolls are opened, making the problem size smaller.
+            Making the problem smaller makes it easier to find the solution.
+
+        Basic Condition to Stop Recursion:
+            A base condition is needed to stop the recursion.
+            In the Russian doll example, the base condition is reaching the smallest doll that cannot be opened.
+
+    Importance of Base Condition:
+        Without a base condition, an infinite loop may occur.
+        Base condition specifies when to stop recursion, either because the answer is found or it doesn't exist.
+
+    Programming Example:
+        Code for the Russian Doll example includes a base condition: when the doll equals one, indicating all dolls are open.
+
+    Recap:
+        Recursion is a problem-solving technique where a function calls itself.
+        The Russian doll example illustrates the logic of recursion, with properties like performing the same operation, trying smaller inputs, and having a base condition to stop.
+
+    Infinite Loop Warning:
+        Without a base condition, a system may enter an infinite loop, emphasizing the importance of providing a stopping condition.
+
+    Humorous Note:
+        A programming joke illustrates the consequences of not having a base condition, leading to an infinite loop.
+
+    Conclusion:
+        Understanding recursion involves grasping the concept of breaking down a problem into smaller instances until a base condition is met.
+
+
+    # Define a recursive function to simulate opening Russian dolls
+    def openRussianDoll(doll):
+        # Base condition: If the current doll is the smallest one (size 1), print a message and stop recursion
+        if doll == 1:
+            print("all dolls opened")
+        else:
+            # If the current doll is not the smallest, initiate a recursive call with the next smaller doll (doll-1)
+            openRussianDoll(doll-1)
+
+
+
+
+
+
+
+    Introduction to Recursion:
+        Recursion can be challenging initially, but with practice, the concept becomes clear.
+        Recursive thinking is crucial in programming, helping break down complex problems into simpler ones.
+
+    Advantages of Recursion:
+        Recursive solutions can often be simpler to read than iterative ones.
+        Recursive thinking is widely applicable in various programming languages and fields.
+
+    Choosing Recursion vs. Iteration:
+        The decision between recursion and iteration depends on the situation.
+        Recursion may be preferred when the problem can be divided into similar subproblems.
+        Practice helps recognize recursive problems; statements like "Design an algorithm to compute nth" are often indicative.
+
+    Recursion in Data Structures:
+        Recursion is prominently used in data structures like trees and graphs.
+        In tree operations, recursion is almost mandatory for its ease of implementation.
+        Learning recursion is essential for understanding upcoming sessions on tree data structures.
+
+    Recursion in Algorithms:
+        Recursion is used in various algorithms, including divide and conquer, greedy, and dynamic programming.
+        Without knowledge of recursion, understanding and implementing these algorithms become challenging.
+
+    Conclusion:
+        Recursion is vital in programming, offering advantages in simplicity, data structures, interviews, and algorithmic solutions.
+        Continuous practice helps in recognizing and effectively using recursion in problem-solving.
+
+
+Recursion uses stack memeory
+
+Recursion uses the stack memory to keep track of function calls and their respective local variables. Each time a function is called,
+a new frame is added to the call stack, containing information about the function's local variables, parameters, and the address to return
+to once the function completes. When the function execution completes, its frame is removed from the stack, allowing the program to return
+to the previous function.
+
+    def factorial(n):
+        if n == 0 or n == 1:
+            return 1
+        else:
+            return n * factorial(n-1)
+
+
+Now, let's break down how the recursion and stack memory work with an example, calculating factorial(5):
+
+    Initial Call: factorial(5)
+        The initial call is made with n = 5.
+        A stack frame is created for this call on the call stack.
+
+    First Recursive Call: factorial(4)
+        Within the function, a new call to factorial(4) is made.
+        Another stack frame is added to the call stack, and the previous frame (for factorial(5)) is temporarily paused.
+
+    Second Recursive Call: factorial(3)
+        Similarly, a call to factorial(3) is made, and a new stack frame is added.
+        The previous frame (for factorial(4)) is temporarily paused.
+
+    Third Recursive Call: factorial(2)
+        This continues until a base case is reached (n == 1).
+        Now, the base case is evaluated, and the recursion starts to unwind.
+
+    Unwinding the Stack:
+        The calculation proceeds backward, multiplying results as it goes up the call stack.
+        factorial(2) returns 2 times factorial(1).
+        factorial(3) returns 3 times the result of the previous step.
+        factorial(4) returns 4 times the result of the previous step.
+        factorial(5) returns 5 times the result of the previous step.
+
+    Final Result:
+        The final result, factorial(5), is calculated by unwinding the stack and multiplying the intermediate results.
+        The call stack is gradually cleared as each frame is no longer needed.
+
+In this example, each recursive call adds a new stack frame, and the stack frames are popped off as the recursion unwinds.
+The base case ensures that the recursion eventually stops, preventing an infinite stack growth. The call stack serves as a memory
+structure to keep track of the state of each recursive call.
+
+
+Note: Any problem that can be solved using recursion, can be solved using iteration
+      Each recursive call add a layer to the stack
+
+When to use/Avoid Recursion
+
+    Advantages of Recursion:
+        Recursion is ideal when a problem can be easily broken down into similar sub-problems.
+        It simplifies code, enhances clarity, and reduces the time needed to write and debug.
+
+    Considerations Before Using Recursion:
+        Recursion introduces overhead, both in terms of time and space.
+        Consider system capabilities; recursion may be suitable for supercomputers but not for low-memory devices or critical systems where speed is crucial.
+
+    Efficiency vs. Clarity:
+        Recursion is often chosen for quick and easy solutions, enhancing code clarity.
+        For small inputs, recursion is a good choice; for large inputs, the trade-off between clarity and efficiency may be less attractive.
+
+    Recursion in Tree Traversal:
+        Recursion is particularly useful for tree traversal.
+        Pre-order traversal, where a single branch is recursively followed until the end, is efficient and beneficial for recursion.
+
+    Memoization in Recursion:
+        Memoization, saving calculated values for future use in recursive calls, can reduce time complexity.
+        This advanced topic is covered in the dynamic programming section.
+
+    Situations Where Recursion is Not Advisable:
+        If a problem cannot be divided into similar sub-problems, recursion is not suitable.
+        Time and space complexity are critical factors; recursion can be memory-intensive.
+        Recursion might be slower if not implemented correctly, making it less efficient than iteration in some cases.
+
+    Recursion Challenges:
+        Recursion, if not implemented carefully, may lead to slow performance due to the allocation of new stack frames.
+        Writing a recursive function that outperforms an iterative counterpart can be challenging.
+
