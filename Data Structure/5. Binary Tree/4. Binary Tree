@@ -1,0 +1,60 @@
+Binary Tree Definition:
+
+    Binary trees are a type of data structure where each node can have at most two children, commonly known as the left and right children.
+    Unlike a general tree structure, binary trees impose a restriction that nodes can have a maximum of two children.
+
+Basic Structure of Binary Tree:
+
+    In a binary tree, each node can have a maximum of two children, leading to a more specialized structure compared to general trees.
+    The basic representation involves nodes with left and right children, creating a hierarchical arrangement.
+
+Binary Tree as a Family of Data Structures:
+
+    Various advanced tree structures, such as Binary Search Trees (BST), Heap Trees, AVL Trees, Red-Black Trees, and Syntax Trees, are all
+    categorized under the umbrella of binary trees.
+    The fundamental property shared by these advanced trees is the restriction on the number of children per node to at most two.
+
+Importance of Binary Trees:
+
+    Binary trees serve as a prerequisite for understanding and working with more advanced tree structures like BST, AVL tree, and red-black trees.
+    Specific problems, such as Huffman coding, heap priority problems, and expression parsing, can be efficiently solved using binary trees.
+
+Need for Learning Binary Trees:
+
+    Learning binary trees is crucial for tackling more complex tree structures and solving specific problems efficiently.
+    Advanced trees build upon the foundational concepts established by binary trees.
+
+
+
+Types of Binary Trees"
+
+    Full Binary Tree:
+        Definition: Each node in the binary tree has either zero or two children, but not one.
+
+    Perfect Binary Tree:
+        Definition: All non-leaf nodes have two children, and all leaf nodes are at the same depth.
+
+    Complete Binary Tree:
+        Definition: All levels are completely filled except the last level, which has all keys as left as possible.
+
+    Balanced Binary Tree:
+        Definition: Each leaf is not more than a certain distance from the root node than any other leaf.
+
+
+Representation using Linked List:
+
+    Each node in a binary tree is represented as a structure containing three components: data, left child, and right child.
+    The left and right child components store the memory addresses of the corresponding nodes.
+    Leaf node left and right pointers are set to Null because we dont have any child now
+
+Representation using Python List:
+
+    A special formula is employed to represent a binary tree using a Python list.
+    The first cell (index 0) is intentionally left empty for ease of mathematical calculations.
+    For a node at index x, the left child is located at 2x, and the right child is located at 2x+1 in the Python list.
+    The root node is placed at index 1 to adhere to the formula.
+
+Preventing Empty Cells:
+
+    To prevent empty cells in the Python list, it is crucial to know the total number of nodes in the tree beforehand.
+    Initializing a fixed-size Python list based on the node count ensures a proper representation without empty cells.
