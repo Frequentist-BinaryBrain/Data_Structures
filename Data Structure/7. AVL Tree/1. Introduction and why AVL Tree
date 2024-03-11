@@ -1,0 +1,105 @@
+The full form of AVL is Adelson-Velsky and Landis, named after the Soviet mathematicians Georgy Adelson-Velsky and Evgenii Landis
+
+    AVL tree is a self-balancing binary search tree.
+    The height difference between left and right subtrees for all nodes cannot be more than one.
+
+Binary Search Tree Properties:
+    AVL tree is a type of binary search tree.
+    Follows the property that left children are smaller than the root, and right children are larger, recursively applying to all nodes.
+
+Additional Property for AVL Trees:
+    Binary search tree must be balanced for AVL trees.
+    AVL trees ensure balance using height balancing.
+
+Height Balancing:
+    AVL trees use height balancing to maintain balance.
+    Nodes are considered balanced if the difference in heights between left and right subtrees is within one.
+
+Rebalancing Mechanism - Rotation:
+    If the height difference exceeds one, rebalancing is done using rotation.
+    Rotation is the process to restore AVL property.
+
+
+The distinguishing feature of AVL trees is their automatic maintenance of balance during insertions and deletions.
+
+In an AVL tree, each node is associated with a balance factor, which is the difference in height between the left and right subtrees.
+The balance factor must be within the range of -1, 0, or 1 for all nodes in the tree. If, after an insertion or deletion operation,
+the balance factor of any node falls outside this range, the tree is considered unbalanced.
+
+To restore balance, AVL trees use rotations. Rotations are operations that adjust the structure of the tree while maintaining the binary search
+tree properties. There are four types of rotations: left rotation, right rotation, left-right rotation, and right-left rotation. These rotations
+help in preserving the balance of the tree.
+
+The self-balancing property of AVL trees ensures that the height of the tree remains logarithmic in the number of nodes, providing efficient search,
+insertion, and deletion operations with a guaranteed time complexity of O(log n), where n is the number of nodes.
+
+In summary, AVL trees are indeed self-balancing data structures, and their automatic balancing mechanism distinguishes them from basic binary search trees.
+
+
+
+AVL Tree Operations:
+1. Creation of AVL Tree:
+
+    Initialize root node with "none."
+    Set left and right child to "none."
+    Time and space complexity: O(1).
+
+2. Traversal of AVL Tree:
+
+    Preorder Traversal:
+        Root, Left Subtree, Right Subtree.
+        Time and space complexity: O(n).
+
+    Inorder Traversal:
+        Left Subtree, Root, Right Subtree.
+        Time and space complexity: O(n).
+
+    Postorder Traversal:
+        Left Subtree, Right Subtree, Root.
+        Time and space complexity: O(n).
+
+    Levelorder Traversal:
+        Visit each level one by one.
+        Time and space complexity: O(n).
+
+3. Search for a Node in AVL Tree:
+
+    Similar to Binary Search Tree logic.
+    Time and space complexity: O(logN).
+
+4. Insert a Node in AVL Tree:
+
+    Follow BST insertion logic.
+    Perform AVL rotations to maintain balance.
+    Update height property.
+    Time complexity: O(logN).
+
+5. Delete a Node from AVL Tree:
+
+    Follow BST deletion logic.
+    Perform AVL rotations to maintain balance.
+    Update height property.
+    Time complexity: O(logN).
+
+6. Delete the Entire AVL Tree:
+
+    Traverse the tree and delete nodes recursively.
+    Time complexity: O(n).
+
+
+
+AVL trees are a specialized form of binary search trees (BSTs) designed to maintain balance automatically.
+While both AVL trees and regular binary search trees support efficient searching, insertion, and deletion operations, their main difference
+lies in how they handle balance.
+
+In a regular binary search tree, the performance of operations like search, insert, and delete is highly dependent on the tree's shape.
+If the tree becomes unbalanced, with one branch significantly longer than the other, the time complexity for these operations can degrade
+from O(logN) to O(N) in the worst case. This occurs when the tree closely resembles a linked list.
+
+On the other hand, AVL trees are self-balancing binary search trees, which means that after each insertion or deletion operation,
+they automatically perform rotations to ensure that the tree remains balanced. The balance is maintained based on the heights of the subtrees.
+Specifically, the balance factor of each node (the height difference between its left and right subtrees) is limited to -1, 0, or 1.
+
+
+Rotation is not required when AVL tree not imbalanced
+Rotation is  required when AVL tree is imbalanced
