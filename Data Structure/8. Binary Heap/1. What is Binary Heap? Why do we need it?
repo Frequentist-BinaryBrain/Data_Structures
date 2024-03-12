@@ -1,0 +1,80 @@
+Binary Heap Overview:
+
+    A Binary Heap is a specialized binary tree with additional properties that make it efficient for certain operations.
+    It maintains the binary tree structure, where each node can have at most two children.
+
+1. Heap Property:
+
+    The crucial property of a Binary Heap is the heap property.
+    It can be either a minimum heap or a maximum heap, defining the relationships between parent and child nodes.
+    In a minimum heap, the value of each node is less than or equal to the values of its children.
+
+
+                10
+              /    \
+            20      30
+           /  \    /  \
+          40   50  60   70
+         / \
+        80  90
+
+        In a minimum heap, the value of each parent node is less than or equal to the values of its children.
+        This property holds recursively for all nodes in the heap.
+
+    In a maximum heap, the value of each node is greater than or equal to the values of its children.
+
+
+                70
+              /    \
+            60      50
+           /  \    /  \
+          40   30  20   10
+         / \
+        80  90
+
+        In a maximum heap, the value of each parent node is greater than or equal to the values of its children.
+        Similar to the minimum heap, this property holds recursively for all nodes.
+
+
+2. Completeness Property:
+
+    Another significant property is completeness.
+    It ensures that all levels of the binary heap are filled, except possibly the last level.
+    The last level is filled from left to right, making it a complete binary tree.
+
+              10
+            /    \
+          20      30
+         /  \    /  \
+        40   50  60   70
+       /  \
+      80   90
+
+
+Ideal for Array Implementation:
+
+    The completeness property makes Binary Heap ideal for array or list implementation.
+    This is particularly advantageous for memory usage, as most of the array cells are filled due to the complete tree structure.
+
+Purpose of Binary Heap:
+
+    Binary Heap serves the purpose of efficiently finding the minimum or maximum values in logarithmic time.
+    It ensures that both insertion and extraction operations take O(logN) time complexity. Ideally if you want to insert at the beginning then we
+    have to move all the elements one step aside to make way for new element to be placed at the front
+
+Comparison with Sorted Array and Linked List:
+
+    A sorted array allows for fast minimum/maximum retrieval (O(1)) but suffers from slow insertion (O(n)).
+    Linked lists, while dynamic for insertion, have slow insertion (O(n)) due to traversal.
+
+Binary Heap Advantages:
+
+    Binary Heap combines the advantages of fast retrieval and efficient insertion.
+    Overcomes the limitations of sorted arrays and linked lists for scenarios where quick insertion is crucial.
+
+Applications:
+
+    Binary Heap is essential for solving various problems, including Prim's algorithm,
+                                                                     heap sort, and
+                                                                     priority queues.
+
