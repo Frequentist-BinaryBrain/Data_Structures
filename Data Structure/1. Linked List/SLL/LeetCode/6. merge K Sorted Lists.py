@@ -1,5 +1,5 @@
 #   https://youtu.be/q5a5OiGbT6Q?si=vL291v-_4Q57gliX
-#   https://leetcode.com/problems/merge-k-sorted-lists/description/
+#   https://youtu.be/q5a5OiGbT6Q?si=vL291v-_4Q57gliX
 
 # Definition for singly-linked list.
 # class ListNode(object):
@@ -21,9 +21,9 @@ class Solution(object):
         while len(lists) > 1:
             mergedList = []
             # Merge pairs of lists in 'lists' and append them to 'mergedList'
-            for i in range(0, len(lists), 2): # we will merge two lists at ones
+            for i in range(0, len(lists), 2):
                 l1 = lists[i]
-                l2 = lists[i + 1] if (i + 1) < len(lists) else None # just to see if second list is empty
+                l2 = lists[i + 1] if (i + 1) < len(lists) else None
                 mergedList.append(self.mergeLists(l1, l2))
             # Update 'lists' with the merged lists
             lists = mergedList

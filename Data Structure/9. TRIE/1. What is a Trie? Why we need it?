@@ -1,0 +1,113 @@
+Introduction to Trie Data Structure:
+
+    Trie is a tree-based data structure used for organizing information in a hierarchical manner, with a particular emphasis on efficient manipulation of strings.
+    It differs from other tree structures like Binary Trees, Binary Search Trees, AVL Trees, and Binary Heaps.
+
+
+Properties of Trie:
+
+    Efficient String Storage:
+        Trie is designed for efficient storage and retrieval of strings.
+
+    Node Characteristics:
+        Nodes in a trie can store non-repetitive multiple characters.
+        Each node stores a link to the next character of the string.
+
+    End of String Tracking:
+        Every node in the trie keeps track of whether it marks the end of a string.
+
+
+Insertion of Strings:
+
+    Strings are efficiently stored in the trie by representing each character with a corresponding node.
+    End-of-string is indicated by a special node, making it easy to determine the end of a string.
+
+Example Trie:
+
+        (AB)
+       /    \
+     (I)    AIM
+     /    /  |  \
+   (RT)  (R) (L)  (.)
+   /  \   |   |
+ (.)  (.)(.)  (.)
+
+
+Inserting Strings:
+
+    Inserting "AIR": A -> I -> R (End-of-string is (.))
+
+         (A)
+         /
+       (I)
+       /
+     (R)
+     /
+   (.)
+
+
+
+    Inserting "AIT": A -> I -> R -> T (End-of-string)
+
+    Now, if we want to insert AIT to this trie over here one more time, we have to create nodes for each character over here.
+    But here you need to take into account that first we are checking if the node is exist in this trie or not.
+    So in this case, we see that A is exist over here, then we will continue to the next node.
+    So in the next node, we see that we are looking for I and we see that I exist over here. So we will continue to the next node.
+    So in the next node, we have R over here, but we need T . So we will insert T over here. Then we will link this T to the new node,
+    which will be the blank node and the end of string property of this node will be set to true. So this will show that AIT is an address tree
+
+         (A)
+         /
+       (I)
+       /
+     (RT)
+     / \
+   (.) (.)
+
+    Inserting "BAR": B -> A -> R (End-of-string)
+
+    Now, let's continue to add another string over here. So another string will be BAR. So, as always, the first step is we will take first
+    character over here and compare it with root node. So in this case, we see that we need B, but here we have A. So we will insert B over here, then we will
+    continue to the next character. And for the next character, we will create new node and assign this character, which is A to it.
+    Then similarly, we will create a new node for R and assign R to it over here. Then after finishing this, we know that
+    this is a complete string, so we need to set the end of string property to true.
+
+          (AB)
+         /   \
+       (I)   (A)
+       /      /
+     (RT)    (R)
+     / \     /
+   (.) (.)  (.)
+
+    Inserting "BAL": B -> A -> I -> L (End-of-string)
+
+          (AB)
+         /   \
+       (I)   (AI)
+       /      / \
+     (RT)    (R) (L)
+     / \     /    \
+   (.) (.)  (.)   (.)
+
+    Inserting "BM": B -> A -> I -> L -> M (End-of-string)
+
+           (AB)
+         /     \
+       (I)     (AIM)
+       /      /  \  \
+     (RT)    (R) (L) (.)
+     / \     /    \
+   (.) (.)  (.)   (.)
+
+
+Why Trie?
+
+    Trie is particularly well-suited for string-related operations, making it efficient for storing and searching strings.
+    It excels in scenarios where fast lookups are essential, especially in applications like spelling checkers and
+                                                                                             autocomplete features.
+
+Use Cases of Trie:
+
+    Trie finds applications in spelling checkers and autocomplete features.
+    Google's autocomplete uses trie-like structures for predicting the next letter.
