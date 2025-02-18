@@ -75,6 +75,11 @@ def postOrderTraversal(rootNode):
 # #   - Queue data structure is used to traverse through all nodes.
 # #   - Time and space complexity: O(n), where n is the number of nodes.
 
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
 class LinkedList:
     def __init__(self):
         self.head = None

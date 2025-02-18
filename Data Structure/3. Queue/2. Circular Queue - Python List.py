@@ -61,7 +61,7 @@ class Queue:
         else:
             # Store the first element to be dequeued in a temporary variable
             firstElement = self.items[self.start]
-            start = self.start # So we can remove this later
+            start = self.start  # So we can remove this later
 
             # Check if this is the only element in the queue
             if self.start == self.top:

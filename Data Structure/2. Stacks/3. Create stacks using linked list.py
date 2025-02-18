@@ -44,6 +44,9 @@ class Stack:
     # If you were to use self.head directly in the Stack class without referencing the LinkedList instance,
     # Python would look for a head attribute directly within the Stack class, and it would not find it. This would result in an AttributeError
 
+#   In the pop method of the Stack class, the head of the linked list is "popped out" because it follows the Last In, First Out (LIFO) principle of a stack.
+#   When you push elements onto the stack using the push method, each new element becomes the new head of the linked list, and it points to the previous head.
+
     def push(self, value):
         # Push a new node with the given value onto the stack
         node = Node(value)
